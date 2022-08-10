@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-promise',
@@ -7,28 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PromiseComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService:DataService) { }
 
 dellAvail(){ return true}
 hpAvail(){return false}
 
 promiseVal:any;
-dell={
-  brand:'Dell',
-  hardDisks:'2-TB',
-  color:'black'
-}
-
-HP={
-  brand:'HP',
-  hardDisks:'1-TB',
-  color:'silver'
-}
-notAvail={
-  brand:'Not Available',
-  status:'failed'
-}
-
   ngOnInit() {
   
         let buyLaptop = new Promise((resolve,reject)=>{
@@ -37,21 +22,21 @@ notAvail={
                                   if(this.dellAvail()){
                                     return setTimeout(()=>{
                                       //  resolve("dell is purchased")
-                                      resolve(this.dell);
+                                      resolve(this.dataService.dell);
                                       },2000);
                                    
                                   }
                                   else if(this.hpAvail()){
                                     return setTimeout(()=>{
                                       //  resolve("HP is purchased")
-                                      resolve(this.HP)
+                                      resolve(this.dataService.HP)
                                       },2000);
                                    
                                   } else
                                   {
                                     return setTimeout(()=>{  
                                       // reject("laptop is not available on store")
-                                      reject(this.notAvail);
+                                      reject(this.dataService.notAvail);
                                     },2000)
                                    }
                                });
