@@ -7,9 +7,13 @@ import { HeaderComponent } from './includes/header/header.component';
 import { PromiseComponent } from './promise/promise.component';
 import { AsyncAwaitComponent } from './async-await/async-await.component';
 import { DataService } from './data.service';
+import { ObservableComponent } from './observable/observable.component';
+
+import { FromEventComponent } from './observable/from-event/from-event.component';
+import { ListComponent } from './observable/list/list.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, PromiseComponent, AsyncAwaitComponent],
+  declarations: [AppComponent, HeaderComponent, PromiseComponent, AsyncAwaitComponent, ObservableComponent, FromEventComponent, ListComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [DataService],
   bootstrap: [AppComponent],

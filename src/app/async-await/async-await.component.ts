@@ -6,7 +6,7 @@ import { DataService } from '../data.service';
   templateUrl: './async-await.component.html',
   styleUrls: ['./async-await.component.scss']
 })
-export class AsyncAwaitComponent implements OnInit {
+export class AsyncAwaitComponent {
   
 
   constructor(private dataService:DataService) { }
@@ -16,22 +16,40 @@ export class AsyncAwaitComponent implements OnInit {
   result1:any;
   result2:any;
   result3:any;
-  
-   buyLaptop =new Promise((resolve,reject)=>{
-    setTimeout(()=>{
-      console.log('promise executed');
-    resolve(this.dataService.dell);
-    },5000);})
 
-    buyLaptop2 = fetch("https://jsonplaceholder.typicode.com/posts").then(response => response.json());
+  // testPromise = new Promise((resolve,reject) => {
+  //   console.log('promise executed -11111');
+  // });
+  buyLaptop2 = fetch("https://jsonplaceholder.typicode.com/posts").then(response => response.json());
+
+   buyLaptop1 =new Promise((resolve,reject)=>{
+     console.log('buy laptop1');
+    //  setTimeout(()=>{
+    //     console.log('promise executed1');
+    //     console.log('promise executed2');
+    //     resolve(this.dataService.dell);
+    //     console.log('promise executed3');
+    //   },5000);
+      
+    
+    this.buyLaptop2.then(result => {
+      console.log(result);   
+      console.log('buy laptop2');
+    });
+
+      Promise.race([this.buyLaptop1, this.buyLaptop2]).then((value) => {
+        console.log(value);
+        // Both resolve, but promise2 is faster
+      });
+  });
 
     // Ex-1 promise
 
 
     fetch1=()=>{
-      // console.log('working')
+      console.log('working')
       this.result1 ='fetching data ...';
-   this.buyLaptop.then(result=>{
+   this.buyLaptop1.then(result=>{
      console.log(result);
      this.result1=JSON.stringify(result);
      })
@@ -44,7 +62,7 @@ export class AsyncAwaitComponent implements OnInit {
   async fetch2(){
 
    this.result2="fetching data";
-   let data = await this.buyLaptop;
+   let data = await this.buyLaptop1;
    console.log("data"+ data);
    this.result2 =JSON.stringify(data);
 
@@ -69,7 +87,7 @@ export class AsyncAwaitComponent implements OnInit {
   
   
   
-  ngOnInit() {
+  // ngOnInit() {
     
     // let promise =new Promise((resolve,reject)=>{setTimeout(()=>{
     //   resolve("data received");
@@ -82,6 +100,6 @@ export class AsyncAwaitComponent implements OnInit {
 
 
    
-  }
+  // }
    
 }

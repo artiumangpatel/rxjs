@@ -1,11 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AsyncAwaitComponent } from './async-await/async-await.component';
+
+import { FromEventComponent } from './observable/from-event/from-event.component';
+import { ListComponent } from './observable/list/list.component';
+import { ObservableComponent } from './observable/observable.component';
 import { PromiseComponent } from './promise/promise.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'promise', pathMatch: 'full' },
   { path: 'promise', component: PromiseComponent },
-  { path: 'asyncAwait', component: AsyncAwaitComponent },
+
+  { path: 'observable', component:ObservableComponent,
+    children: [{  path:'',component:ListComponent},
+               {  path:'fromEvent',component:FromEventComponent}]
+   },
+  
   { path: '**', redirectTo: 'promise'},
 ];
 

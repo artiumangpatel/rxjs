@@ -23,7 +23,7 @@ promiseVal:any;
                                     return setTimeout(()=>{
                                       //  resolve("dell is purchased")
                                       resolve(this.dataService.dell);
-                                      },2000);
+                                      },10);
                                    
                                   }
                                   else if(this.hpAvail()){
