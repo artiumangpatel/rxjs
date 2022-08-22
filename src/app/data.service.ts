@@ -5,6 +5,13 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
 
+  print(val:any,containerId:any){
+    //element create for li
+    let el = document.createElement('li');
+    el.innerText=val;
+    document.getElementById(containerId)?.appendChild(el);
+        }
+      
   constructor() { }
 
   dell={

@@ -11,9 +11,11 @@ import { ObservableComponent } from './observable/observable.component';
 
 import { FromEventComponent } from './observable/from-event/from-event.component';
 import { ListComponent } from './observable/list/list.component';
+import { IntervalComponent } from './observable/interval/interval.component';
+import { OfFromComponent } from './observable/of-from/of-from.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, PromiseComponent, AsyncAwaitComponent, ObservableComponent, FromEventComponent, ListComponent],
+  declarations: [AppComponent, HeaderComponent, PromiseComponent, AsyncAwaitComponent, ObservableComponent, FromEventComponent, ListComponent, IntervalComponent, OfFromComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [DataService],
   bootstrap: [AppComponent],
