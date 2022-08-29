@@ -1,0 +1,50 @@
+<div class="my-3">
+    <h3>Pluck</h3>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <strong>Example-1</strong>
+            <hr>
+            <p class="bg-light py-2 px-3 border rounded">
+                <strong>Pluck: by property</strong>
+            </p>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of data">
+                        <td>{{item}}</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+        <div class="col-md-4">
+            <strong>Example-2</strong>
+            <hr>
+            <p class="bg-light py-2 px-3 border rounded">
+                <strong>Pluck:job title</strong>
+
+            </p>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Job >title</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of data2">
+                        <td>{{item}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
