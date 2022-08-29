@@ -5,6 +5,17 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
 
+  users=[{id:1,name:"arti",gender:'female',skill:'angular',job:{title:'frontend Devloper',exp:'10 years'} },
+         {id:2,name:"umang",gender:'male',skill:'react', job:{title:'frontend Devloper',exp:'10 years'}},
+         {id:3,name:"meera",gender:'female',skill:'javaScript',job:{title:'javaScript Devloper',exp:'10 years'}},
+         {id:4,name:"yatri",gender:'female',skill:'vue',job:{title:'UI Devloper',exp:'10 years'}},
+         {id:5,name:"vishv",gender:'male',skill:'node', job:{title:'frontend Devloper',exp:'10 years'}},
+         {id:6,name:"bhoomi",gender:'female',skill:'html', job:{title:'HTML Devloper',exp:'10 years'}},]
+
+
+   dataArray=fetch('https://jsonplaceholder.typicode.com/posts')
+   .then(response => response.json());
+
   print(val:any,containerId:any){
     //element create for li
     let el = document.createElement('li');
