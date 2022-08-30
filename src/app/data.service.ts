@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
+  array=["arti","umang","meera","yatri","vishv","bhoomi","binal"]
+ 
 
   users=[{id:1,name:"arti",gender:'female',skill:'angular',job:{title:'frontend Devloper',exp:'10 years'} },
          {id:2,name:"umang",gender:'male',skill:'react', job:{title:'frontend Devloper',exp:'10 years'}},
@@ -12,9 +14,27 @@ export class DataService {
          {id:5,name:"vishv",gender:'male',skill:'node', job:{title:'frontend Devloper',exp:'10 years'}},
          {id:6,name:"bhoomi",gender:'female',skill:'html', job:{title:'HTML Devloper',exp:'10 years'}},]
 
-
-   dataArray=fetch('https://jsonplaceholder.typicode.com/posts')
-   .then(response => response.json());
+         
+         dataArray = [{id:1,name:"arti",gender:'female',skill:'angular',job:{title:'frontend Devloper',exp:'10 years'} },
+        ];
+         
+         getUser (){
+             fetch('https://jsonplaceholder.typicode.com/users')
+             .then(response =>  
+               { 
+                //  console.log("response: ", response.json());
+                 return response.json()
+               }
+             ).then(result => {
+               console.log("result: ", result);
+               this.dataArray = result;
+             });;
+           }
+    // .then(data => { 
+    //   console.log('data', data)
+    //   this.dataArray = data;
+    // });
+  
 
   print(val:any,containerId:any){
     //element create for li
@@ -23,7 +43,19 @@ export class DataService {
     document.getElementById(containerId)?.appendChild(el);
         }
       
-  constructor() { }
+  constructor() { 
+    // fetch('https://jsonplaceholder.typicode.com/users')
+    // .then(response =>  
+    //   { 
+    //     // console.log("response: ", response.json());
+    //     return response.json()
+    //   }
+    // ).then(result => {
+    //   console.log("result: ", result);
+    //   this.dataArray = result;
+    // });;
+
+  }
 
   dell={
   brand:'Dell',

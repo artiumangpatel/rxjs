@@ -18,9 +18,12 @@ import { CustomComponent } from './observable/custom/custom.component';
 import { MapComponent } from './observable/map/map.component';
 import { PluckComponent } from './observable/pluck/pluck.component';
 import { FilterComponent } from './observable/filter/filter.component';
+import { TapComponent } from './observable/tap/tap.component';
+import { TakeComponent } from './observable/take/take.component';
+import { RetryComponent } from './observable/retry/retry.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, PromiseComponent, AsyncAwaitComponent, ObservableComponent, FromEventComponent, ListComponent, IntervalComponent, OfFromComponent, ToArrayComponent, CustomComponent, MapComponent, PluckComponent, FilterComponent],
+  declarations: [AppComponent, HeaderComponent, PromiseComponent, AsyncAwaitComponent, ObservableComponent, FromEventComponent, ListComponent, IntervalComponent, OfFromComponent, ToArrayComponent, CustomComponent, MapComponent, PluckComponent, FilterComponent, TapComponent, TakeComponent, RetryComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [DataService],
   bootstrap: [AppComponent],
