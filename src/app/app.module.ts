@@ -21,10 +21,14 @@ import { FilterComponent } from './observable/filter/filter.component';
 import { TapComponent } from './observable/tap/tap.component';
 import { TakeComponent } from './observable/take/take.component';
 import { RetryComponent } from './observable/retry/retry.component';
+import { HttpClientModule } from '@angular/common/http';
+import{AngularFireModule}from '@angular/fire/compat';
 
+import { environment } from 'src/environments/environment';
 @NgModule({
   declarations: [AppComponent, HeaderComponent, PromiseComponent, AsyncAwaitComponent, ObservableComponent, FromEventComponent, ListComponent, IntervalComponent, OfFromComponent, ToArrayComponent, CustomComponent, MapComponent, PluckComponent, FilterComponent, TapComponent, TakeComponent, RetryComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule,HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase)],
   providers: [DataService],
   bootstrap: [AppComponent],
 })
