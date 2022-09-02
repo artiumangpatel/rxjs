@@ -25,8 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
 import{AngularFireModule}from '@angular/fire/compat';
 
 import { environment } from 'src/environments/environment';
+import { DebounceTimeComponent } from './observable/debounce-time/debounce-time.component';
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, PromiseComponent, AsyncAwaitComponent, ObservableComponent, FromEventComponent, ListComponent, IntervalComponent, OfFromComponent, ToArrayComponent, CustomComponent, MapComponent, PluckComponent, FilterComponent, TapComponent, TakeComponent, RetryComponent],
+  declarations: [AppComponent, HeaderComponent, PromiseComponent, AsyncAwaitComponent, ObservableComponent, FromEventComponent, ListComponent, IntervalComponent, OfFromComponent, ToArrayComponent, CustomComponent, MapComponent, PluckComponent, FilterComponent, TapComponent, TakeComponent, RetryComponent, DebounceTimeComponent],
   imports: [BrowserModule, AppRoutingModule,HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase)],
   providers: [DataService],
